@@ -18,10 +18,12 @@ top = GPIO.PWM(11, Shot.tfreq)  # GPIO.PWM instance start top
 bot = GPIO.PWM(13, Shot.bfreq)  # GPIO.PWM instance start bottom
 azm = GPIO.PWM(32, Shot.azmfreq)
 alt = GPIO.PWM(33, Shot.altfreq)
+GPIO.output(16, True)
+GPIO.output(29, True)
 
 
 def split():
-    return random.randint(3, 10)  # Random time Between shots
+    return random.randint(3, 5)  # Random time Between shots
 
 
 def print_it():
@@ -48,27 +50,31 @@ def shot_instance():
     alt.ChangeDutyCycle(Shot.altduty)
 
 
-Shotlist = [Shot.t_c, Shot.t_l, Shot.t_r, Shot.b_c, Shot.b_l, Shot.b_r]
+Shotlist = [Shot.t_c, Shot.t_l, Shot.t_r, Shot.b_c, Shot.b_l, Shot.b_r,
+            Shot.t_c_d, Shot.t_l_d, Shot.t_r_d, Shot.b_c_d, Shot.b_l_d, Shot.b_r_d]
 
-top.start(0)  # Begin PWM
-bot.start(0)  # Begin PWM
-azm.start(0)
-alt.start(0)
-i = 0  # Instance for timing
-ShotNumber = i + 1
-Shot.startup()
-shot_instance()
-print_it()
-time.sleep(split())
-while i <= 15:  # Where number is the amount of rounds
-    print("Shot Number: ")
-    print(i + 1)
-    choice(Shotlist)()
-    split()
+
+try:
+    top.start(0)  # Begin PWM
+    bot.start(0)  # Begin PWM
+    azm.start(0)
+    alt.start(0)
+    i = 0  # Instance for timing
+    ShotNumber = i + 1
+    Shot.startup()
     shot_instance()
     print_it()
     time.sleep(split())
-    i = i + 1
-GPIO.cleanup()
+    while i <= 100:  # Where number is the amount of rounds
+        print("Shot Number: ")
+        print(i + 1)
+        choice(Shotlist)()
+        split()
+        shot_instance()
+        print_it()
+        time.sleep(split())
+        i = i + 1
+finally:
+    GPIO.cleanup()
 
 # Shot = Shot(1, 1, 0, 0, 0, 0)

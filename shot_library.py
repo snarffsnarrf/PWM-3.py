@@ -98,6 +98,51 @@ class Shot:
         self.altduty = alt_center
         self.name = "Topspin Right"
 
+    def t_c_d(self):
+        self.tfreq = Hfreq
+        self.bfreq = Hfreq
+        self.azmfreq = azm_freq
+        self.altfreq = alt_freq
+        self.tpin = top_pin
+        self.bpin = bot_pin
+        self.azmpin = azm_pin
+        self.altpin = alt_pin
+        self.tduty = hhspd
+        self.bduty = hspd
+        self.azmduty = azm_center
+        self.altduty = alt_center
+        self.name = "Topspin Center Deep"
+
+    def t_l_d(self):
+        self.tfreq = Hfreq
+        self.bfreq = Hfreq
+        self.azmfreq = azm_freq
+        self.altfreq = alt_freq
+        self.tpin = top_pin
+        self.bpin = bot_pin
+        self.azmpin = azm_pin
+        self.altpin = alt_pin
+        self.tduty = hhspd
+        self.bduty = hspd
+        self.azmduty = azm_left
+        self.altduty = alt_center
+        self.name = "Topspin Left Deep"
+
+    def t_r_d(self):
+        self.tfreq = Hfreq
+        self.bfreq = Hfreq
+        self.azmfreq = azm_freq
+        self.altfreq = alt_freq
+        self.tpin = top_pin
+        self.bpin = bot_pin
+        self.azmpin = azm_pin
+        self.altpin = alt_pin
+        self.tduty = hhspd
+        self.bduty = hspd
+        self.azmduty = azm_right
+        self.altduty = alt_center
+        self.name = "Topspin Right Deep"
+
     def b_c(self):
         self.tfreq = Hfreq
         self.bfreq = Hfreq
@@ -142,6 +187,51 @@ class Shot:
         self.azmduty = azm_left
         self.altduty = alt_down
         self.name = "Backspin Right"
+
+    def b_c_d(self):
+        self.tfreq = Hfreq
+        self.bfreq = Hfreq
+        self.azmfreq = azm_freq
+        self.altfreq = alt_freq
+        self.tpin = top_pin
+        self.bpin = bot_pin
+        self.azmpin = azm_pin
+        self.altpin = alt_pin
+        self.tduty = hspd
+        self.bduty = hhspd
+        self.azmduty = azm_center
+        self.altduty = alt_down
+        self.name = "Backspin Center Deep"
+
+    def b_l_d(self):
+        self.tfreq = Hfreq
+        self.bfreq = Hfreq
+        self.azmfreq = azm_freq
+        self.altfreq = alt_freq
+        self.tpin = top_pin
+        self.bpin = bot_pin
+        self.azmpin = azm_pin
+        self.altpin = alt_pin
+        self.tduty = hspd
+        self.bduty = hhspd
+        self.azmduty = azm_left
+        self.altduty = alt_down
+        self.name = "Backspin Left Deep"
+
+    def b_r_d(self):
+        self.tfreq = Hfreq
+        self.bfreq = Hfreq
+        self.azmfreq = azm_freq
+        self.altfreq = alt_freq
+        self.tpin = top_pin
+        self.bpin = bot_pin
+        self.azmpin = azm_pin
+        self.altpin = alt_pin
+        self.tduty = hspd
+        self.bduty = hhspd
+        self.azmduty = azm_left
+        self.altduty = alt_down
+        self.name = "Backspin Right Deep"
 
     # def d_t_spin(self):
     #     self.tfreq = Hfreq
