@@ -12,12 +12,12 @@ mspd = 85
 lspd = 75
 
 azm_center = 7.5
-azm_left = 2.5
-azm_right = 12.5
+azm_left = 5
+azm_right = 10
 
 alt_center = 7.5
 alt_up = 2.5
-alt_down = 12.5
+alt_down = 11
 
 
 class Shot:
